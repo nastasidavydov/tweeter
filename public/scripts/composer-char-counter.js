@@ -1,6 +1,6 @@
 $(document).ready(function() {
   
-  $("textarea").on('input', function() {
+  $("#tweet-text").on('input', function() {
 
     // get access to counter class using dom traversal
     const counter = $(this).parent().children(".form-footer").children(".counter");
