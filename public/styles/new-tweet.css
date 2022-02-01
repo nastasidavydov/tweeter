@@ -1,0 +1,40 @@
+.new-tweet {
+  color: #665f54;
+  font-weight: 700;
+}
+.new-tweet form textarea {
+  outline: none;
+  background-color: transparent;
+  width:100%;
+  resize: none;
+  border: 0;
+  /* border-style: none; */
+  border-color: transparent;
+  border-bottom: 3px solid #665f54;
+  
+}
+
+.form-footer {
+  margin: 10px 0;
+
+  font-family: 'Bungee', sans-serif;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-tweet {
+  padding: 5px;
+
+  background-color: #4056A1;
+  color: #fff;
+  
+  cursor: pointer;
+}
+
+
+.form-footer output {
+  color: #665f54;
+  font-weight: 600;
+}
