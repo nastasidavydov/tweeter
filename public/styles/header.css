@@ -1,13 +1,12 @@
 header {
-  height: 400px;
+  margin-top: 120px;
+  height: 520px;
   width: 100%;
 
   color: #fff;
   background-color: #e69812;
   background-image: url("../images/asfalt-light.png");
 
-  position: relative;
-  top: 120px;
 
   display: flex;
   justify-content: center;
