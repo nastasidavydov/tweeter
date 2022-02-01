@@ -8,15 +8,12 @@
   width:100%;
   resize: none;
   border: 0;
-  /* border-style: none; */
-  border-color: transparent;
   border-bottom: 3px solid #665f54;
   
 }
 
 .form-footer {
   margin: 10px 0;
-
   font-family: 'Bungee', sans-serif;
   font-weight: 600;
 
@@ -26,7 +23,6 @@
 
 .btn-tweet {
   padding: 5px;
-
   background-color: #4056A1;
   color: #fff;
   
