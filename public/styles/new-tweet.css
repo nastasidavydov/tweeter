@@ -29,8 +29,6 @@
   cursor: pointer;
 }
 
-
-.form-footer output {
-  color: #665f54;
-  font-weight: 600;
+.warning {
+  color: #db071c;
 }
