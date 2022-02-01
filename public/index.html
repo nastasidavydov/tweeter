@@ -9,8 +9,9 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css">
-    <link rel="stylesheet" href="/styles/header.css" type="text/css">
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 
@@ -54,9 +55,17 @@
   
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>What are you humming about?</p>
-      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus.</h2>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus earum praesentium architecto aliquam perspiciatis assumenda dolorem a. Nesciunt, nobis deserunt, sint ratione ab fugit, odit sed nihil tempora sequi quos!</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="post" action="/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
