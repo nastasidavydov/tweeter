@@ -53,6 +53,14 @@ $(document).ready(function(){
   form.submit(function(event) {
     event.preventDefault();
 
+    //input field form validation
+    let input = $("#tweet-text").val();
+    if (!input) {
+      return alert('Empty field')
+    } else if (input.length > 140) {
+      return alert('You exceeded max message length')
+    }
+
     const tweetText = form.serialize();
     $.ajax("/tweets", 
     {
@@ -60,9 +68,10 @@ $(document).ready(function(){
       data: tweetText,
     })
   })
-  
+
   //fetch data from the server
   const loadTweets = () => {
+    //input field form validation
     $.ajax("/tweets", 
     {
       method: 'GET',
