@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/header.css" type="text/css"/>
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css"/>
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
 
@@ -26,6 +27,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -55,6 +57,8 @@
   
     <!-- Page-specific (main) content here -->
     <main class="container">
+
+      <!-- Create new tweet -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="post" action="/tweets">
@@ -65,6 +69,35 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
+      </section>
+
+      <!-- Tweets -->
+      <section id="tweet-container">
+        <article class="tweet">
+
+          <header>
+            <div class="user-data">
+              <i class="fas fa-user-ninja"></i>
+              <span>Nastasi</span>
+            </div>
+            <div class="username">@username</div>
+          </header>
+
+          <div class="tweet-content">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum beatae quae distinctio enim sequi.</p>
+          </div>
+
+          <footer>
+            <div class="date">
+              <span>10 days ago</span>
+            </div>
+            <div class="icons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
+            </div>
+          </footer>
+        </article>
       </section>
     </main>
   </body>
