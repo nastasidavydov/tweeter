@@ -44,7 +44,7 @@ const createTweetElement = tweet => {
   <article class="tweet">
   <header>
     <div class="user-data">
-      <img src="${tweet.user.avatars}"/>
+      <img class="avatar" src="${tweet.user.avatars}"/>
       <span>${tweet.user.name}</span>
     </div>
     <div class="username">${tweet.user.handle}</div>
