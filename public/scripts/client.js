@@ -30,6 +30,13 @@ const tweetsData = [
 ];
 
 
+const renderTweets = tweets => {
+  for (let tweet of tweets) {
+    let layout = createTweetElement(tweet);
+    $('#tweet-container').append(layout);
+  }
+}
+
 
 const createTweetElement = tweet => {
   
@@ -62,9 +69,7 @@ const createTweetElement = tweet => {
   return layout;
 };
 
-const $tweet = createTweetElement(tweetsData[0]);
-console.log($tweet);
 
 $(document).ready(function(){
-  $('#tweet-container').append($tweet)
+  renderTweets(tweetsData);
 })
