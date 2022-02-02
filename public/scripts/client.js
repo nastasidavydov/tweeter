@@ -8,6 +8,7 @@
 
 
 const renderTweets = tweets => {
+  $('#tweet-container').empty()
   for (let tweet of tweets) {
     let layout = createTweetElement(tweet);
     $('#tweet-container').append(layout);
@@ -66,7 +67,7 @@ $(document).ready(function(){
     {
       method: 'POST',
       data: tweetText,
-    })
+    }).then(() => loadTweets())
   })
 
   //fetch data from the server
@@ -76,8 +77,9 @@ $(document).ready(function(){
     {
       method: 'GET',
     }).then((data) => {
-      renderTweets(data);
+      renderTweets(data.reverse());
     })
   }
   loadTweets()
 })
+
