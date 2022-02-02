@@ -72,4 +72,15 @@ const createTweetElement = tweet => {
 
 $(document).ready(function(){
   renderTweets(tweetsData);
+  const form = $(".new-tweet").children("form");
+  form.submit(function(event) {
+    event.preventDefault();
+
+    const tweetText = form.serialize();
+    $.ajax("/tweets", 
+    {
+      method: 'POST',
+      data: tweetText,
+    })
+  })
 })
