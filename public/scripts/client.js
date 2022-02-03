@@ -6,7 +6,7 @@
 
 
 
-
+// takes an array of tweets and append to #tweet-container
 const renderTweets = tweets => {
   $('#tweet-container').empty();
   for (let tweet of tweets) {
@@ -16,13 +16,13 @@ const renderTweets = tweets => {
 };
 
 // Preventing XSS with Escaping
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
-
+// takes in tweet obj and insert data into layout
 const createTweetElement = tweet => {
   
   const layout = ` 
@@ -50,12 +50,12 @@ const createTweetElement = tweet => {
     </div>
   </footer>
 </article>
-  `
+  `;
   return layout;
 };
 
 
-$(document).ready(function(){
+$(document).ready(function() {
   
   const form = $(".new-tweet").children("form");
 
@@ -69,33 +69,37 @@ $(document).ready(function(){
       return $(".error-msg").text('Empty field').slideDown();
     } else if (input.length > 140) {
       return $(".error-msg").text('You exceeded max message length').slideDown();
-    } 
+    }
     $(".error-msg").hide();
 
     const tweetText = form.serialize();
-    $.ajax("/tweets", 
-    {
+    $.ajax("/tweets", {
       method: 'POST',
       data: tweetText,
+
     }).then(() => {
+
       // reset counter and clears textarea
       $(".counter").val(140);
       $("#tweet-text").val('');
-      loadTweets()
-    })
-  })
-  
+
+      // loads tweets dinamycally
+      loadTweets();
+    });
+  });
+
   //fetch data from the server
   const loadTweets = () => {
     
-    $.ajax("/tweets", 
-    {
+    $.ajax("/tweets", {
+
       method: 'GET',
+      
     }).then((data) => {
       renderTweets(data.reverse());
-    })
-  }
+    });
+  };
   // when a page load -> add first tweets
-  loadTweets()
-})
+  loadTweets();
+});
 
