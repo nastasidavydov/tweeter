@@ -59,6 +59,7 @@ $(document).ready(function(){
   
   const form = $(".new-tweet").children("form");
 
+  // send form input data to the server
   form.submit(function(event) {
     event.preventDefault();
     
@@ -77,7 +78,8 @@ $(document).ready(function(){
       method: 'POST',
       data: tweetText,
     }).then(() => {
-
+      // reset counter and clears textarea
+      $(".counter").val(140);
       $("#tweet-text").val('');
       loadTweets()
     })
@@ -85,7 +87,7 @@ $(document).ready(function(){
   
   //fetch data from the server
   const loadTweets = () => {
-    //input field form validation
+    
     $.ajax("/tweets", 
     {
       method: 'GET',
@@ -93,7 +95,7 @@ $(document).ready(function(){
       renderTweets(data.reverse());
     })
   }
-  // when a page load add first tweets
+  // when a page load -> add first tweets
   loadTweets()
 })
 
