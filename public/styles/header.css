@@ -14,7 +14,26 @@ body > header {
   align-items: center;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 
 h2 {
   font-weight: 400;
+}
+
+@media only screen and (min-width: 1024px) {
+
+
+  body > header {
+    
+    margin: 200px 3em 3em;
+    width: 35%;
+    height: 450px;
+
+  }
+
 }
