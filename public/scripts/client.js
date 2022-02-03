@@ -8,12 +8,19 @@
 
 
 const renderTweets = tweets => {
-  $('#tweet-container').empty()
+  $('#tweet-container').empty();
   for (let tweet of tweets) {
     let layout = createTweetElement(tweet);
     $('#tweet-container').append(layout);
   }
-}
+};
+
+// Preventing XSS with Escaping
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 
 const createTweetElement = tweet => {
@@ -23,18 +30,18 @@ const createTweetElement = tweet => {
   <header>
     <div class="user-data">
       <img class="avatar" src="${tweet.user.avatars}"/>
-      <span>${tweet.user.name}</span>
+      <span>${escape(tweet.user.name)}</span>
     </div>
-    <div class="username">${tweet.user.handle}</div>
+    <div class="username">${escape(tweet.user.handle)}</div>
   </header>
 
   <div class="tweet-content">
-    <p>${tweet.content.text}</p>
+    <p>${escape(tweet.content.text)}</p>
   </div>
 
   <footer>
     <div class="date">
-      <span>${timeago.format(tweet.created_at)}</span>
+      <span>${escape(timeago.format(tweet.created_at))}</span>
     </div>
     <div class="icons">
       <i class="fas fa-flag"></i>
@@ -80,6 +87,7 @@ $(document).ready(function(){
       renderTweets(data.reverse());
     })
   }
+  // when a page load add first tweets
   loadTweets()
 })
 
