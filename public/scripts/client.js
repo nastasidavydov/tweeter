@@ -58,25 +58,31 @@ const createTweetElement = tweet => {
 $(document).ready(function(){
   
   const form = $(".new-tweet").children("form");
+
   form.submit(function(event) {
     event.preventDefault();
-
+    
     //input field form validation
     let input = $("#tweet-text").val();
     if (!input) {
-      return alert('Empty field')
+      return $(".error-msg").text('Empty field').slideDown();
     } else if (input.length > 140) {
-      return alert('You exceeded max message length')
-    }
+      return $(".error-msg").text('You exceeded max message length').slideDown();
+    } 
+    $(".error-msg").hide();
 
     const tweetText = form.serialize();
     $.ajax("/tweets", 
     {
       method: 'POST',
       data: tweetText,
-    }).then(() => loadTweets())
-  })
+    }).then(() => {
 
+      $("#tweet-text").val('');
+      loadTweets()
+    })
+  })
+  
   //fetch data from the server
   const loadTweets = () => {
     //input field form validation
