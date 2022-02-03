@@ -32,3 +32,14 @@
 .warning {
   color: #db071c;
 }
+
+/* Error message */
+
+.error-msg {
+  color: #db071c;
+  border: 2px solid #db071c;
+  padding: 20px 40px;
+  margin: 35px 0;
+
+  display: none;
+}
