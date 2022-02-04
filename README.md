@@ -4,9 +4,9 @@ Tweeter is a simplified single-page Twitter clone built with HTML, CSS, JS, jQue
 
 ## Final Product
 
-!["Tablet screen size display"]()
+!["Tablet screen size display"](https://raw.githubusercontent.com/nastasidavydov/tweeter/master/docs/tablet.png)
 
-!["Desktop screen size display and submitting an empty tweet"]()
+!["Desktop screen size display and submitting an empty tweet"](https://raw.githubusercontent.com/nastasidavydov/tweeter/master/docs/desktop.png)
 
 
 ## Getting Started
